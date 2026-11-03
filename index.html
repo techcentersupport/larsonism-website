@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larsonism - Official Awareness Page</title>
+    <style>
+        :root {
+            --bg-color: #fdfaf6;
+            --card-bg: #ffffff;
+            --primary-color: #ff5722;
+            --secondary-color: #ffc107;
+            --accent-blue: #00bcd4;
+            --text-color: #2b2b2b;
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .badge {
+            background-color: var(--secondary-color);
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #ffe0b2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 2px solid #f0f0f0;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .icon {
+            font-size: 1.8rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .banner {
+            max-width: 900px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-blue));
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+        }
+
+        .banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge">A Totally Fake Disorder</span>
+        <h1>Are You Suffering From LARSONISM?</h1>
+        <p class="subtitle">For the slightly dense, delightfully confused, and endlessly chaotic individuals among us.</p>
+    </header>
+
+    <div class="container">
+        <!-- Symptoms Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🌀</span>
+                <h2>Common Symptoms</h2>
+            </div>
+            <ul>
+                <li>Staring blankly into the distance for minutes at a time.</li>
+                <li>Walking into a room and having zero idea why.</li>
+                <li>Pulling doors that clearly say "PUSH".</li>
+                <li>Forgetting your own phone number mid-conversation.</li>
+                <li>Making bizarre noises with no logical explanation.</li>
+                <li>Laughing hysterically at the exact wrong moment.</li>
+            </ul>
+        </div>
+
+        <!-- Treatment Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">💊</span>
+                <h2>Recommended "Treatment"</h2>
+            </div>
+            <ul>
+                <li>Daily doses of controlled, harmless chaos.</li>
+                <li>Hanging out with equally dense and erratic friends.</li>
+                <li>Building pillow forts instead of doing responsibilities.</li>
+                <li>Watching nonsensical video loops for hours.</li>
+                <li>Strict policy: <b>Zero logical thoughts allowed.</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Interactive / Callout Banner -->
+    <div class="banner">
+        <h3>Does This Sound Like You?</h3>
+        <p>If yes, congratulations! You have officially joined the club.</p>
+        <a href="#" class="cta-btn" onclick="alert('Congratulations! You are officially diagnosed with Larsonism 🌀'); return false;">Claim Your Diagnosis</a>
+    </div>
+
+    <div class="disclaimer">
+        <p>⚠️ <i>This page is for entertainment and joke purposes only. It is not a real medical diagnosis. Embrace your chaos!</i></p>
+    </div>
+
+</body>
+</html>
