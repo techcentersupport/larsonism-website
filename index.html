@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Larsonism Research Institute | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">Larsonism.net <span>Official Portal</span></a>
+      <a href="index.html" class="logo">Larsonism.net <span>Chill Portal</span></a>
       <nav>
         <a href="index.html" class="active">Overview</a>
         <a href="testimonials.html">Testimonials</a>
@@ -19,52 +19,332 @@
     </div>
   </header>
 
+  <div class="ticker-bar">
+    🫠 <strong>Daily Vibe Check:</strong> 14,892 confirmed cases of pulling on PUSH doors today. Stay hydrated and read signs twice.
+  </div>
+
   <main>
     <section class="hero">
-      <span class="badge">Public Health Advisory • Code LRS-404</span>
+      <span class="badge">Public Silliness Advisory • Code LRS-404</span>
       <h1>Understanding Larsonism</h1>
       <p>
-        <strong>Larsonism</strong> (<em>Acute Goofiness &amp; Situational Bewilderment Syndrome</em>) is a widespread, non-contagious neurological quirk characterized by sudden lapses in common sense, inexplicable physical comedy, and confident execution of terrible ideas.
+        <strong>Larsonism</strong> (<em>Acute Goofiness &amp; Situational Bewilderment Syndrome</em>) is a widespread, non-contagious quirk characterized by sudden lapses in common sense, accidental physical comedy, and full confidence in terrible ideas.
       </p>
       <br>
-      <a href="certificate.html" class="btn btn-accent">Generate Official Diagnosis</a>
-      <a href="testimonials.html" class="btn" style="margin-left: 0.5rem;">Read Patient Stories</a>
+      <a href="#quizSection" class="btn btn-accent">Take the Symptom Quiz 📝</a>
+      <a href="#soundboardSection" class="btn" style="margin-left: 0.5rem;">Goofy Soundboard 🔊</a>
     </section>
 
     <div class="grid">
       <div class="card">
         <h3>Common Symptoms</h3>
         <ul class="symptoms">
-          <li>Aggressively pulling on doors clearly labeled <strong>"PUSH"</strong>.</li>
-          <li>Staring blankly into the refrigerator for 4+ minutes without taking anything.</li>
-          <li>Saying <em>"You too"</em> when a waiter tells you to enjoy your meal.</li>
-          <li>Walking into a room and immediately forgetting why you entered.</li>
-          <li>Laughing at your own joke before finishing the punchline.</li>
+          <li>Pulling aggressively on doors clearly labeled <strong>"PUSH"</strong>.</li>
+          <li>Staring into the fridge for 4 minutes and closing it empty-handed.</li>
+          <li>Saying <em>"You too"</em> when a waiter says <em>"Enjoy your food."</em></li>
+          <li>Looking for your phone while holding it in your hand.</li>
+          <li>Laughing at your own joke before finishing the setup.</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Stages of Progression</h3>
-        <p style="margin-bottom: 0.75rem;"><strong>Stage 1 (Mild):</strong> Occasional mispronunciation of simple words and losing sunglasses while wearing them on your head.</p>
-        <p style="margin-bottom: 0.75rem;"><strong>Stage 2 (Moderate):</strong> Attempting to unlock your front door using your car key fob.</p>
-        <p><strong>Stage 3 (Peak Larsonism):</strong> Full commitment to goofy behavior in public with zero situational awareness.</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Stage 1 (Mild):</strong> Losing sunglasses while wearing them on top of your head.</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Stage 2 (Moderate):</strong> Trying to unlock your front door with your car key fob.</p>
+        <p><strong>Stage 3 (Peak Larsonism):</strong> Zero situational awareness paired with maximum goofy confidence.</p>
       </div>
 
       <div class="card">
-        <h3>Treatment &amp; Management</h3>
+        <h3>Treatment &amp; Care</h3>
         <p style="margin-bottom: 1rem;">
-          There is currently no known cure for Larsonism. Doctors recommend hydration, double-checking door signs, and accepting your fate.
+          There is no known cure. Doctors recommend deep breaths, snack breaks, and embracing the bit.
         </p>
         <p>
-          If you or a loved one exhibit two or more symptoms daily, please obtain an official certificate for workplace or school accommodations.
+          Need a hall pass for your latest goofy moment? Generate an official certificate below.
         </p>
+        <br>
+        <a href="certificate.html" class="btn">Get Certified 🎓</a>
       </div>
     </div>
+
+    <!-- Interactive Symptom Quiz -->
+    <section class="card" id="quizSection">
+      <h2>🩺 Do You Have Larsonism? (Quick Quiz)</h2>
+      <p style="margin-bottom: 1rem;">Answer 5 quick questions to calculate your official silliness diagnosis.</p>
+
+      <form id="larsonQuiz">
+        <div class="form-group">
+          <label for="quizUserName">Your Name (for your results)</label>
+          <input type="text" id="quizUserName" placeholder="Enter your name..." required>
+        </div>
+
+        <div class="quiz-question">
+          <p>1. A stranger waves in your general direction. What do you do?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="0" required> Check behind me first like a normal person.</label>
+            <label><input type="radio" name="q1" value="1"> Wave back slightly, then pretend I was stretching.</label>
+            <label><input type="radio" name="q1" value="2"> Enthusiastically wave with both hands at someone who wasn't looking at me.</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p>2. You walk into the kitchen. What happens next?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="0" required> I grab the exact snack I came in for.</label>
+            <label><input type="radio" name="q2" value="1"> I forget why I'm there for 10 seconds, then remember.</label>
+            <label><input type="radio" name="q2" value="2"> I stand motionless by the pantry questioning my existence and leave with nothing.</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p>3. You drop your phone. How do your reflexes respond?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="0" required> Step back safely and pick it up.</label>
+            <label><input type="radio" name="q3" value="1"> Clumsily juggle it like a hot potato before dropping it anyway.</label>
+            <label><input type="radio" name="q3" value="2"> Accidentally punt it across the room trying to catch it with my foot.</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p>4. Someone says "Happy Birthday!" when it is NOT your birthday.</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="0" required> Politely let them know it's not my birthday.</label>
+            <label><input type="radio" name="q4" value="1"> Say "Thanks!" and walk away fast out of panic.</label>
+            <label><input type="radio" name="q4" value="2"> Say "Happy Birthday to you too!" and immediately replay it in my head for 3 years.</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p>5. A heavy glass door clearly says "PUSH" in giant letters.</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="0" required> Push it open smoothly.</label>
+            <label><input type="radio" name="q5" value="1"> Pull once, feel silly, then push.</label>
+            <label><input type="radio" name="q5" value="2"> Tug on the handle three times like it's locked before someone inside opens it for me.</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-accent">Calculate My Diagnosis 🔮</button>
+      </form>
+
+      <div class="quiz-result-box" id="quizResult">
+        <h3 id="resultTitle" style="color: var(--primary); margin-bottom: 0.4rem;"></h3>
+        <p id="resultDesc" style="margin-bottom: 1rem;"></p>
+        <a id="claimCertLink" href="certificate.html" class="btn">Claim My Official Certificate 📜</a>
+      </div>
+    </section>
+
+    <!-- Goofy Soundboard + Custom Sound Maker -->
+    <section class="card" id="soundboardSection">
+      <h2>🔊 Official Larsonism Soundboard &amp; Custom Sound Maker</h2>
+      <p>Tap any button below when a friend has a Larsonism moment—or design and add your own goofy synth sound effect!</p>
+
+      <div class="sound-grid" id="soundGrid">
+        <button type="button" class="sound-btn" onclick="playPreset('boing')">🦘 Cartoon Boing</button>
+        <button type="button" class="sound-btn" onclick="playPreset('sadTrombone')">🎺 Sad Trombone</button>
+        <button type="button" class="sound-btn" onclick="playPreset('bonk')">🔨 Goofy Bonk</button>
+        <button type="button" class="sound-btn" onclick="playPreset('ufo')">🛸 Braincell Leaving</button>
+        <button type="button" class="sound-btn" onclick="playPreset('alert')">🚨 Goofball Alert</button>
+        <button type="button" class="sound-btn" onclick="playPreset('slideUp')">🎈 Slide Whistle</button>
+      </div>
+
+      <div class="maker-panel">
+        <h3>🎛️ Custom Sound Button Maker</h3>
+        <p style="font-size: 1.05rem; color: var(--muted);">Dial in your own pitch, wobble, and wave shape, preview it, and add it to the board.</p>
+
+        <div class="maker-controls">
+          <div class="form-group">
+            <label for="customSoundName">Button Label &amp; Emoji</label>
+            <input type="text" id="customSoundName" placeholder="e.g., 🦆 Duck Honk" maxlength="24">
+          </div>
+          <div class="form-group">
+            <label for="waveType">Sound Vibe</label>
+            <select id="waveType">
+              <option value="sine">Bubbly Sine</option>
+              <option value="triangle">Soft Kazoo (Triangle)</option>
+              <option value="sawtooth">Buzzy Horn (Sawtooth)</option>
+              <option value="square">8-Bit Retro (Square)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="startFreq">Start Pitch (<span id="startFreqVal">320</span> Hz)</label>
+            <input type="range" id="startFreq" min="80" max="1200" value="320" oninput="document.getElementById('startFreqVal').textContent=this.value">
+          </div>
+          <div class="form-group">
+            <label for="endFreq">End Pitch (<span id="endFreqVal">680</span> Hz)</label>
+            <input type="range" id="endFreq" min="60" max="1400" value="680" oninput="document.getElementById('endFreqVal').textContent=this.value">
+          </div>
+          <div class="form-group">
+            <label for="durationRange">Length (<span id="durVal">0.45</span>s)</label>
+            <input type="range" id="durationRange" min="0.15" max="1.2" step="0.05" value="0.45" oninput="document.getElementById('durVal').textContent=this.value">
+          </div>
+          <div class="form-group">
+            <label for="wobbleAmount">Wobble Speed (<span id="wobbleVal">12</span> Hz)</label>
+            <input type="range" id="wobbleAmount" min="0" max="35" value="12" oninput="document.getElementById('wobbleVal').textContent=this.value">
+          </div>
+        </div>
+
+        <button type="button" class="btn" onclick="previewCustomSound()">▶️ Test Sound</button>
+        <button type="button" class="btn btn-accent" onclick="addCustomSound()" style="margin-left: 0.5rem;">➕ Add to Soundboard</button>
+      </div>
+    </section>
   </main>
 
   <footer>
-    &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
+    &copy; 2026 National Institute of Larsonism Studies. Relaxed, goofy, and 100% satirical.
   </footer>
+
+  <script>
+    // --- QUIZ LOGIC ---
+    document.getElementById("larsonQuiz").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("quizUserName").value.trim() || "Goofball";
+      let score = 0;
+      for (let i = 1; i <= 5; i++) {
+        const picked = document.querySelector(`input[name="q${i}"]:checked`);
+        if (picked) score += parseInt(picked.value, 10);
+      }
+
+      let stage = "Stage 1 — Mild";
+      let symptom = "Occasional Refrigerator Staring";
+      let summary = `Score: ${score}/10. You exhibit mild Larsonism—mostly harmless, slightly spacey, and prone to waving at strangers.`;
+
+      if (score >= 4 && score <= 7) {
+        stage = "Stage 2 — Moderate";
+        symptom = "Chronic Push/Pull Door Confusion";
+        summary = `Score: ${score}/10. Classic Moderate Larsonism! You regularly say "You too" to service workers and misplace items you are actively holding.`;
+      } else if (score >= 8) {
+        stage = "Stage 3 — Peak Larsonism";
+        symptom = "Terminal Goofiness & Zero Spatial Awareness";
+        summary = `Score: ${score}/10. Extraordinary! You are operating at Peak Larsonism. Please download your certificate immediately for public safety.`;
+      }
+
+      document.getElementById("resultTitle").textContent = `${name}: ${stage}`;
+      document.getElementById("resultDesc").textContent = summary;
+
+      const params = new URLSearchParams({
+        name: name,
+        stage: stage,
+        symptom: symptom
+      });
+      document.getElementById("claimCertLink").href = `certificate.html?${params.toString()}`;
+      document.getElementById("quizResult").style.display = "block";
+    });
+
+    // --- WEB AUDIO SOUNDBOARD & CUSTOM MAKER ---
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSynth({ type = "sine", startFreq = 300, endFreq = 600, duration = 0.4, wobble = 0 }) {
+      const ctx = getAudioCtx();
+      const now = ctx.currentTime;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(startFreq, now);
+      osc.frequency.exponentialRampToValueAtTime(Math.max(20, endFreq), now + duration);
+
+      if (wobble > 0) {
+        const lfo = ctx.createOscillator();
+        const lfoGain = ctx.createGain();
+        lfo.frequency.value = wobble;
+        lfoGain.gain.value = 35;
+        lfo.connect(lfoGain);
+        lfoGain.connect(osc.frequency);
+        lfo.start(now);
+        lfo.stop(now + duration);
+      }
+
+      gain.gain.setValueAtTime(0.28, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + duration);
+    }
+
+    function playPreset(name) {
+      if (name === "boing") {
+        playSynth({ type: "sine", startFreq: 160, endFreq: 540, duration: 0.55, wobble: 18 });
+      } else if (name === "bonk") {
+        playSynth({ type: "triangle", startFreq: 380, endFreq: 95, duration: 0.25, wobble: 0 });
+      } else if (name === "ufo") {
+        playSynth({ type: "sine", startFreq: 750, endFreq: 190, duration: 0.85, wobble: 14 });
+      } else if (name === "slideUp") {
+        playSynth({ type: "sine", startFreq: 240, endFreq: 1150, duration: 0.6, wobble: 4 });
+      } else if (name === "alert") {
+        playSynth({ type: "square", startFreq: 520, endFreq: 780, duration: 0.2, wobble: 0 });
+        setTimeout(() => playSynth({ type: "square", startFreq: 520, endFreq: 780, duration: 0.25, wobble: 0 }), 220);
+      } else if (name === "sadTrombone") {
+        const notes = [311, 293, 277, 261];
+        notes.forEach((freq, idx) => {
+          setTimeout(() => {
+            playSynth({
+              type: "sawtooth",
+              startFreq: freq,
+              endFreq: idx === 3 ? freq * 0.82 : freq * 0.98,
+              duration: idx === 3 ? 0.65 : 0.26,
+              wobble: idx === 3 ? 9 : 0
+            });
+          }, idx * 280);
+        });
+      }
+    }
+
+    function getCustomParams() {
+      return {
+        label: document.getElementById("customSoundName").value.trim() || "🤪 Mystery Goof",
+        type: document.getElementById("waveType").value,
+        startFreq: Number(document.getElementById("startFreq").value),
+        endFreq: Number(document.getElementById("endFreq").value),
+        duration: Number(document.getElementById("durationRange").value),
+        wobble: Number(document.getElementById("wobbleAmount").value)
+      };
+    }
+
+    function previewCustomSound() {
+      playSynth(getCustomParams());
+    }
+
+    const CUSTOM_SOUNDS_KEY = "larsonism_custom_sounds_v1";
+
+    function renderCustomButtons() {
+      const grid = document.getElementById("soundGrid");
+      grid.querySelectorAll(".custom-added").forEach(el => el.remove());
+
+      const saved = JSON.parse(localStorage.getItem(CUSTOM_SOUNDS_KEY) || "[]");
+      saved.forEach(sound => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "sound-btn custom-added";
+        btn.style.background = "#fde4cf";
+        btn.textContent = sound.label;
+        btn.onclick = () => playSynth(sound);
+        grid.appendChild(btn);
+      });
+    }
+
+    function addCustomSound() {
+      const sound = getCustomParams();
+      playSynth(sound);
+      const saved = JSON.parse(localStorage.getItem(CUSTOM_SOUNDS_KEY) || "[]");
+      saved.push(sound);
+      localStorage.setItem(CUSTOM_SOUNDS_KEY, JSON.stringify(saved));
+      renderCustomButtons();
+      document.getElementById("customSoundName").value = "";
+    }
+
+    renderCustomButtons();
+  </script>
 
 </body>
 </html>
