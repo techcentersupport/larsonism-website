@@ -53,7 +53,7 @@
             <label for="storyText">Your Experience / Symptoms</label>
             <textarea id="storyText" rows="3" placeholder="Tell us about your latest Larsonism episode..." minlength="5" maxlength="800" required></textarea>
           </div>
-          <button type="submit" class="btn">Post Testimonial</button>
+          <button type="submit" class="btn btn-accent">Report a Goofy Moment 📢</button>
         </form>
       </div>
 
@@ -67,10 +67,10 @@
   </footer>
 
   <script type="module">
-    import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
     const SUPABASE_URL = "https://afxnuinaxalrocdhiuus.supabase.co";
-    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+    const SUPABASE_ANON_KEY = "sb_publishable_fSz67tzzebjAVnN3N9CB6Q_Ku0WuhEz";
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     const listEl = document.getElementById("testimonialsList");
@@ -99,13 +99,13 @@
         .order("created_at", { ascending: false });
 
       if (error) {
-        listEl.innerHTML = `<div class="card"><p>Could not load testimonials right now.</p></div>`;
+        listEl.innerHTML = `<div class="card"><p><strong>Database error:</strong> ${escapeHTML(error.message)}</p></div>`;
         console.error(error);
         return;
       }
 
       if (!data || data.length === 0) {
-        listEl.innerHTML = `<div class="card"><p>No testimonials yet. Be the first to report symptoms.</p></div>`;
+        listEl.innerHTML = `<div class="card"><p>No testimonials yet. Be the first to report symptoms!</p></div>`;
         return;
       }
 
@@ -141,10 +141,10 @@
         .insert([{ name, stage, story }]);
 
       submitBtn.disabled = false;
-      submitBtn.textContent = "Post Testimonial";
+      submitBtn.textContent = "Report a Goofy Moment 📢";
 
       if (error) {
-        alert("Could not submit testimonial. Check your input length and try again.");
+        alert("Submission error: " + error.message);
         console.error(error);
         return;
       }
