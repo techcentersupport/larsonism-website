@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Official Diagnosis Certificate | Larsonism.net</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">Larsonism.net <span>Official Portal</span></a>
+      <a href="index.html" class="logo">Larsonism.net <span>Chill Portal</span></a>
       <nav>
         <a href="index.html">Overview</a>
         <a href="testimonials.html">Testimonials</a>
@@ -22,36 +23,45 @@
   <main>
     <div class="card no-print">
       <h2>Official Larsonism Certificate Generator</h2>
-      <p style="margin-bottom: 1rem; color: var(--muted);">Enter a name below to issue an official medical exemption and diagnosis certificate.</p>
-      <div class="grid" style="margin-bottom: 0;">
+      <p style="margin-bottom: 1rem; color: var(--muted);">Customize your diagnosis below, then download it as an image or print it out.</p>
+      <div class="grid" style="margin-bottom: 1rem;">
         <div class="form-group">
           <label for="recipientInput">Patient Full Name</label>
           <input type="text" id="recipientInput" placeholder="Enter name here..." value="Alex Johnson">
         </div>
         <div class="form-group">
+          <label for="stageInput">Diagnosis Stage</label>
+          <select id="stageInput">
+            <option value="Stage 1 — Mild">Stage 1 — Mild</option>
+            <option value="Stage 2 — Moderate">Stage 2 — Moderate</option>
+            <option value="Stage 3 — Peak Larsonism" selected>Stage 3 — Peak Larsonism</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="symptomInput">Primary Observed Symptom</label>
           <select id="symptomInput">
             <option value="Chronic Push/Pull Door Confusion">Chronic Push/Pull Door Confusion</option>
-            <option value="Terminal Goofiness & Unprovoked Bit Commitment">Terminal Goofiness &amp; Unprovoked Bit Commitment</option>
-            <option value="Acute Refrigerator Staring Syndrome">Acute Refrigerator Staring Syndrome</option>
-            <option value="Severe Situational Bewilderment">Severe Situational Bewilderment</option>
+            <option value="Terminal Goofiness & Zero Spatial Awareness">Terminal Goofiness &amp; Zero Spatial Awareness</option>
+            <option value="Occasional Refrigerator Staring">Occasional Refrigerator Staring</option>
+            <option value="Saying 'You Too' to Waiters">Saying 'You Too' to Waiters</option>
           </select>
         </div>
       </div>
-      <button type="button" class="btn" onclick="updateCertificate()">Update Certificate</button>
-      <button type="button" class="btn btn-accent" onclick="window.print()" style="margin-left: 0.5rem;">Print / Save as PDF</button>
+      <button type="button" class="btn" onclick="updateCertificate()">Update Certificate ✨</button>
+      <button type="button" class="btn btn-accent" onclick="downloadCertImage()" style="margin-left: 0.5rem;">Save as PNG 📸</button>
+      <button type="button" class="btn" onclick="window.print()" style="margin-left: 0.5rem;">Print / PDF 🖨️</button>
     </div>
 
-    <!-- Printable Certificate -->
+    <!-- Printable / Downloadable Certificate -->
     <div class="certificate-wrapper" id="certificate">
-      <p style="letter-spacing: 3px; font-weight: bold; color: var(--muted); font-size: 0.85rem;">NATIONAL INSTITUTE OF LARSONISM STUDIES</p>
+      <p style="letter-spacing: 2px; font-weight: bold; color: var(--muted); font-size: 0.9rem;">NATIONAL INSTITUTE OF LARSONISM STUDIES</p>
       <h2>Certificate of Diagnosis</h2>
       <p class="cert-subtitle">This official document hereby certifies that</p>
 
       <div class="cert-name" id="certNameDisplay">Alex Johnson</div>
 
       <p class="cert-details">
-        has been thoroughly evaluated and formally diagnosed with <strong>Stage 3 Larsonism</strong>, presenting primarily with <strong id="certSymptomDisplay">Chronic Push/Pull Door Confusion</strong>. Please grant this individual extra patience, clear signage, and reasonable comedic accommodations.
+        has been thoroughly evaluated and formally diagnosed with <strong id="certStageDisplay">Stage 3 — Peak Larsonism</strong>, presenting primarily with <strong id="certSymptomDisplay">Chronic Push/Pull Door Confusion</strong>. Please grant this individual extra patience, clear door signage, and reasonable comedic accommodations.
       </p>
 
       <div class="cert-footer">
@@ -60,23 +70,36 @@
           <div class="sig-line">Date of Diagnosis</div>
         </div>
         <div>
-          <p style="font-family: Georgia, serif; font-style: italic; font-weight: bold; margin-bottom: 0.2rem;">Dr. B. Goofus, MD</p>
-          <div class="sig-line">Chief Medical Examiner</div>
+          <p style="font-style: italic; font-weight: bold; margin-bottom: 0.2rem;">Dr. B. Goofus, MD</p>
+          <div class="sig-line">Chief Silliness Examiner</div>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
+    &copy; 2026 National Institute of Larsonism Studies. Relaxed, goofy, and 100% satirical.
   </footer>
 
   <script>
     function updateCertificate() {
       const nameVal = document.getElementById("recipientInput").value.trim() || "Valued Patient";
+      const stageVal = document.getElementById("stageInput").value;
       const symptomVal = document.getElementById("symptomInput").value;
+
       document.getElementById("certNameDisplay").textContent = nameVal;
+      document.getElementById("certStageDisplay").textContent = stageVal;
       document.getElementById("certSymptomDisplay").textContent = symptomVal;
+    }
+
+    function downloadCertImage() {
+      const certEl = document.getElementById("certificate");
+      html2canvas(certEl, { scale: 2, backgroundColor: "#fffdf7" }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "larsonism-certificate.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
     }
 
     document.getElementById("certDateDisplay").textContent = new Date().toLocaleDateString("en-US", {
@@ -84,6 +107,19 @@
       day: "numeric",
       year: "numeric"
     });
+
+    // Auto-fill if arriving from the index.html Symptom Quiz
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("name")) {
+      document.getElementById("recipientInput").value = urlParams.get("name");
+    }
+    if (urlParams.has("stage")) {
+      document.getElementById("stageInput").value = urlParams.get("stage");
+    }
+    if (urlParams.has("symptom")) {
+      document.getElementById("symptomInput").value = urlParams.get("symptom");
+    }
+    updateCertificate();
   </script>
 
 </body>
