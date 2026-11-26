@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patient Testimonials | Larsonism.net</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">Larsonism.net <span>Official Portal</span></a>
+      <a href="index.html" class="logo">Larsonism.net <span>Chill Portal</span></a>
       <nav>
         <a href="index.html">Overview</a>
         <a href="testimonials.html" class="active">Testimonials</a>
@@ -23,15 +23,13 @@
     <section class="hero">
       <span class="badge">Patient Registry</span>
       <h1>Living With Larsonism</h1>
-      <p>Read real accounts from individuals bravely navigating daily life with Larsonism, or submit your own case report below.</p>
+      <p>Read real accounts from individuals bravely navigating daily life with Larsonism, or share your own goofy case report below.</p>
     </section>
 
     <div class="grid" style="grid-template-columns: 1fr;">
-      <!-- Add Testimonial Form -->
       <div class="card">
         <h2>Submit Your Testimonial</h2>
         <form id="testimonialForm">
-          <!-- Honeypot field for basic spam bots -->
           <div style="display: none;" aria-hidden="true">
             <label for="websiteField">Website</label>
             <input type="text" id="websiteField" name="website" tabindex="-1" autocomplete="off">
@@ -57,13 +55,12 @@
         </form>
       </div>
 
-      <!-- Testimonials List -->
       <div id="testimonialsList"></div>
     </div>
   </main>
 
   <footer>
-    &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
+    &copy; 2026 National Institute of Larsonism Studies. Relaxed, goofy, and 100% satirical.
   </footer>
 
   <script type="module">
@@ -122,7 +119,6 @@
     formEl.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Reject if honeypot field was filled out
       const honeypot = document.getElementById("websiteField").value.trim();
       if (honeypot) return;
 
