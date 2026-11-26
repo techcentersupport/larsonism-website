@@ -31,9 +31,15 @@
       <div class="card">
         <h2>Submit Your Testimonial</h2>
         <form id="testimonialForm">
+          <!-- Honeypot field for basic spam bots -->
+          <div style="display: none;" aria-hidden="true">
+            <label for="websiteField">Website</label>
+            <input type="text" id="websiteField" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="form-group">
             <label for="patientName">Your Name</label>
-            <input type="text" id="patientName" placeholder="e.g., Jane Doe" required>
+            <input type="text" id="patientName" placeholder="e.g., Jane Doe" maxlength="80" required>
           </div>
           <div class="form-group">
             <label for="diagnosisStage">Diagnosis Stage</label>
@@ -45,7 +51,7 @@
           </div>
           <div class="form-group">
             <label for="storyText">Your Experience / Symptoms</label>
-            <textarea id="storyText" rows="3" placeholder="Tell us about your latest Larsonism episode..." required></textarea>
+            <textarea id="storyText" rows="3" placeholder="Tell us about your latest Larsonism episode..." minlength="5" maxlength="800" required></textarea>
           </div>
           <button type="submit" class="btn">Post Testimonial</button>
         </form>
@@ -60,38 +66,15 @@
     &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
   </footer>
 
-  <script>
-    const defaultTestimonials = [
-      {
-        name: "Tim Curtis",
-        stage: "Stage 3 — Peak Larsonism",
-        story: "Last Tuesday I spent three full minutes trying to tap my debit card on the self-checkout barcode scanner before the attendant gently pointed at the card reader. Getting diagnosed finally gave my family answers.",
-        date: "Verified Patient"
-      },
-      {
-        name: "Marcus V.",
-        stage: "Stage 2 — Moderate",
-        story: "I poured orange juice directly into my bowl of Frosted Flakes while looking straight at the milk jug. Honestly, the certificate helps explain a lot to my coworkers.",
-        date: "Verified Patient"
-      },
-      {
-        name: "Sarah K.",
-        stage: "Stage 1 — Mild",
-        story: "I searched my entire house for my phone using the flashlight on my phone. Glad to know I am not alone in this struggle.",
-        date: "Verified Patient"
-      }
-    ];
+  <script type="module">
+    import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-    const STORAGE_KEY = "larsonism_testimonials_v1";
+    const SUPABASE_URL = "https://afxnuinaxalrocdhiuus.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
 
-    function getTestimonials() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        return JSON.parse(saved);
-      }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultTestimonials));
-      return defaultTestimonials;
-    }
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const listEl = document.getElementById("testimonialsList");
+    const formEl = document.getElementById("testimonialForm");
 
     function escapeHTML(str) {
       const div = document.createElement("div");
@@ -99,47 +82,78 @@
       return div.innerHTML;
     }
 
-    function renderTestimonials() {
-      const list = document.getElementById("testimonialsList");
-      const items = getTestimonials();
-      list.innerHTML = items.map(item => `
+    function formatDate(isoString) {
+      return new Date(isoString).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+    }
+
+    async function loadTestimonials() {
+      listEl.innerHTML = `<div class="card"><p>Loading patient stories...</p></div>`;
+
+      const { data, error } = await supabase
+        .from("testimonials")
+        .select("id, name, stage, story, created_at")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        listEl.innerHTML = `<div class="card"><p>Could not load testimonials right now.</p></div>`;
+        console.error(error);
+        return;
+      }
+
+      if (!data || data.length === 0) {
+        listEl.innerHTML = `<div class="card"><p>No testimonials yet. Be the first to report symptoms.</p></div>`;
+        return;
+      }
+
+      listEl.innerHTML = data.map(item => `
         <div class="card testimonial-card">
           <p>"${escapeHTML(item.story)}"</p>
           <div class="testimonial-meta">
-            — ${escapeHTML(item.name)} | ${escapeHTML(item.stage)} (${escapeHTML(item.date)})
+            — ${escapeHTML(item.name)} | ${escapeHTML(item.stage)} (${escapeHTML(formatDate(item.created_at))})
           </div>
         </div>
       `).join("");
     }
 
-    document.getElementById("testimonialForm").addEventListener("submit", function(e) {
+    formEl.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      // Reject if honeypot field was filled out
+      const honeypot = document.getElementById("websiteField").value.trim();
+      if (honeypot) return;
+
+      const submitBtn = formEl.querySelector("button[type='submit']");
       const name = document.getElementById("patientName").value.trim();
       const stage = document.getElementById("diagnosisStage").value;
       const story = document.getElementById("storyText").value.trim();
 
       if (!name || !story) return;
 
-      const today = new Date().toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-      });
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Posting...";
 
-      const items = getTestimonials();
-      items.unshift({
-        name,
-        stage,
-        story,
-        date: `Submitted ${today}`
-      });
+      const { error } = await supabase
+        .from("testimonials")
+        .insert([{ name, stage, story }]);
 
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-      renderTestimonials();
-      this.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Post Testimonial";
+
+      if (error) {
+        alert("Could not submit testimonial. Check your input length and try again.");
+        console.error(error);
+        return;
+      }
+
+      formEl.reset();
+      await loadTestimonials();
     });
 
-    renderTestimonials();
+    loadTestimonials();
   </script>
 
 </body>
