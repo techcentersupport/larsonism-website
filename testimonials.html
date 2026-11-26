@@ -1,270 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimonials - Living With Larsonism</title>
-    <style>
-        :root {
-            --bg-color: #fdfaf6;
-            --card-bg: #ffffff;
-            --primary-color: #ff5722;
-            --secondary-color: #ffc107;
-            --accent-blue: #00bcd4;
-            --text-color: #2b2b2b;
-            --border-radius: 16px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 0 20px 20px;
-        }
-
-        /* Navigation Bar */
-        nav {
-            max-width: 900px;
-            margin: 0 auto 20px;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ece6df;
-        }
-
-        .nav-logo {
-            font-weight: 900;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 20px;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px 30px;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 0px #ffe0b2;
-        }
-
-        .subtitle {
-            font-size: 1.15rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 2px solid #f0f0f0;
-            position: relative;
-        }
-
-        .testimonial-card.featured {
-            border-color: var(--secondary-color);
-            background: linear-gradient(to bottom right, #ffffff, #fffdf7);
-        }
-
-        .featured-badge {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .quote {
-            font-size: 1.15rem;
-            font-style: italic;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .author-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--accent-blue);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .author-details h3 {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin-bottom: 2px;
-        }
-
-        .author-details span {
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .cta-box {
-            max-width: 900px;
-            margin: 35px auto 10px;
-            text-align: center;
-            background: #fff;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            border: 2px dashed var(--accent-blue);
-        }
-
-        .cta-btn {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 12px 26px;
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: bold;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-
-        .cta-btn:hover {
-            background-color: #e64a19;
-        }
-
-        .disclaimer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 40px;
-            padding-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Testimonials | Larsonism.net</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="nav-logo">🌀 LARSONISM</a>
-        <div class="nav-links">
-            <a href="index.html">Overview</a>
-            <a href="testimonials.html" class="active">Testimonials</a>
-            <a href="certificate.html">Get Certified</a>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Stories From the Confused</h1>
-        <p class="subtitle">Hear directly from individuals bravely navigating life with zero thoughts between their ears.</p>
-    </header>
-
-    <div class="testimonials-grid">
-        <!-- Featured Testimonial: Tim Curtis -->
-        <div class="testimonial-card featured">
-            <span class="featured-badge">⭐ Featured Patient Story</span>
-            <p class="quote">"Before I found out about Larsonism, I honestly thought everyone spent twenty minutes looking for their sunglasses while wearing them on their head. Last Tuesday I walked into the kitchen, stared directly at the refrigerator for four full minutes, forgot how doorknobs work, and accidentally put the cereal box in the dishwasher. Getting diagnosed didn't fix my brain, mostly because there isn't much going on up there anyway, but at least now I have an excuse."</p>
-            <div class="author-info">
-                <div class="avatar" style="background-color: #ff5722;">TC</div>
-                <div class="author-details">
-                    <h3>Tim Curtis</h3>
-                    <span>Diagnosed Stage 4 Larsonist • Still Looking For His Keys</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Secondary Testimonial 2 -->
-        <div class="testimonial-card">
-            <p class="quote">"Someone asked me how old I was at the grocery store yesterday and I panicked and told them 'blue.' Since embracing the Larsonism lifestyle, I've stopped fighting the urge to pull on doors that clearly say PUSH in giant letters. Life is so much easier when you stop trying to use logic."</p>
-            <div class="author-info">
-                <div class="avatar" style="background-color: #00bcd4;">BM</div>
-                <div class="author-details">
-                    <h3>Brenda M.</h3>
-                    <span>Certified Door-Puller • Professional Daydreamer</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Secondary Testimonial 3 -->
-        <div class="testimonial-card">
-            <p class="quote">"My doctor told me my brain scan looked like a screensaver bouncing around waiting to hit the corner. Once I started my prescribed regimen of building pillow forts and making random pterodactyl noises when things get too quiet, I've never felt more at peace."</p>
-            <div class="author-info">
-                <div class="avatar" style="background-color: #ffc107; color: #2b2b2b;">GK</div>
-                <div class="author-details">
-                    <h3>Greg K.</h3>
-                    <span>Smooth-Brain Enthusiast • Member Since 2024</span>
-                </div>
-            </div>
-        </div>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Larsonism.net <span>Official Portal</span></a>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+        <a href="certificate.html">Get Certified</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="cta-box">
-        <h3>Relate a little too hard to Tim's story?</h3>
-        <p>Don't suffer in confusion alone. Make your diagnosis official right now.</p>
-        <a href="certificate.html" class="cta-btn">Claim Your Certificate →</a>
-    </div>
+  <main>
+    <section class="hero">
+      <span class="badge">Patient Registry</span>
+      <h1>Living With Larsonism</h1>
+      <p>Read real accounts from individuals bravely navigating daily life with Larsonism, or submit your own case report below.</p>
+    </section>
 
-    <div class="disclaimer">
-        <p>⚠️ <i>All testimonials on this page are completely fictional and created strictly for comedy and entertainment purposes.</i></p>
+    <div class="grid" style="grid-template-columns: 1fr;">
+      <!-- Add Testimonial Form -->
+      <div class="card">
+        <h2>Submit Your Testimonial</h2>
+        <form id="testimonialForm">
+          <div class="form-group">
+            <label for="patientName">Your Name</label>
+            <input type="text" id="patientName" placeholder="e.g., Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="diagnosisStage">Diagnosis Stage</label>
+            <select id="diagnosisStage" required>
+              <option value="Stage 1 — Mild">Stage 1 — Mild</option>
+              <option value="Stage 2 — Moderate">Stage 2 — Moderate</option>
+              <option value="Stage 3 — Peak Larsonism" selected>Stage 3 — Peak Larsonism</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="storyText">Your Experience / Symptoms</label>
+            <textarea id="storyText" rows="3" placeholder="Tell us about your latest Larsonism episode..." required></textarea>
+          </div>
+          <button type="submit" class="btn">Post Testimonial</button>
+        </form>
+      </div>
+
+      <!-- Testimonials List -->
+      <div id="testimonialsList"></div>
     </div>
+  </main>
+
+  <footer>
+    &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
+  </footer>
+
+  <script>
+    const defaultTestimonials = [
+      {
+        name: "Tim Curtis",
+        stage: "Stage 3 — Peak Larsonism",
+        story: "Last Tuesday I spent three full minutes trying to tap my debit card on the self-checkout barcode scanner before the attendant gently pointed at the card reader. Getting diagnosed finally gave my family answers.",
+        date: "Verified Patient"
+      },
+      {
+        name: "Marcus V.",
+        stage: "Stage 2 — Moderate",
+        story: "I poured orange juice directly into my bowl of Frosted Flakes while looking straight at the milk jug. Honestly, the certificate helps explain a lot to my coworkers.",
+        date: "Verified Patient"
+      },
+      {
+        name: "Sarah K.",
+        stage: "Stage 1 — Mild",
+        story: "I searched my entire house for my phone using the flashlight on my phone. Glad to know I am not alone in this struggle.",
+        date: "Verified Patient"
+      }
+    ];
+
+    const STORAGE_KEY = "larsonism_testimonials_v1";
+
+    function getTestimonials() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        return JSON.parse(saved);
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultTestimonials));
+      return defaultTestimonials;
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function renderTestimonials() {
+      const list = document.getElementById("testimonialsList");
+      const items = getTestimonials();
+      list.innerHTML = items.map(item => `
+        <div class="card testimonial-card">
+          <p>"${escapeHTML(item.story)}"</p>
+          <div class="testimonial-meta">
+            — ${escapeHTML(item.name)} | ${escapeHTML(item.stage)} (${escapeHTML(item.date)})
+          </div>
+        </div>
+      `).join("");
+    }
+
+    document.getElementById("testimonialForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("patientName").value.trim();
+      const stage = document.getElementById("diagnosisStage").value;
+      const story = document.getElementById("storyText").value.trim();
+
+      if (!name || !story) return;
+
+      const today = new Date().toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+
+      const items = getTestimonials();
+      items.unshift({
+        name,
+        stage,
+        story,
+        date: `Submitted ${today}`
+      });
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      renderTestimonials();
+      this.reset();
+    });
+
+    renderTestimonials();
+  </script>
 
 </body>
 </html>
