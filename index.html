@@ -1,269 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larsonism - Official Awareness Page</title>
-    <style>
-        :root {
-            --bg-color: #fdfaf6;
-            --card-bg: #ffffff;
-            --primary-color: #ff5722;
-            --secondary-color: #ffc107;
-            --accent-blue: #00bcd4;
-            --text-color: #2b2b2b;
-            --border-radius: 16px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 0 20px 20px;
-        }
-
-        /* Navigation Bar */
-        nav {
-            max-width: 900px;
-            margin: 0 auto 20px;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ece6df;
-        }
-
-        .nav-logo {
-            font-weight: 900;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 20px;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 0px #ffe0b2;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 2px solid #f0f0f0;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .card-header h2 {
-            font-size: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .icon {
-            font-size: 1.8rem;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-
-        li::before {
-            content: "•";
-            position: absolute;
-            left: 10px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .banner {
-            max-width: 900px;
-            margin: 30px auto;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-blue));
-            color: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
-        }
-
-        .banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: white;
-            color: var(--primary-color);
-            font-weight: bold;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .cta-btn.secondary {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .disclaimer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 40px;
-            padding-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Larsonism Research Institute | Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="nav-logo">🌀 LARSONISM</a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Overview</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="certificate.html">Get Certified</a>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Are You Suffering From LARSONISM?</h1>
-        <p class="subtitle">For the slightly dense, delightfully confused, and endlessly chaotic individuals among us.</p>
-    </header>
-
-    <div class="container">
-        <!-- Symptoms Card -->
-        <div class="card">
-            <div class="card-header">
-                <span class="icon">🌀</span>
-                <h2>Common Symptoms</h2>
-            </div>
-            <ul>
-                <li>Staring blankly into the distance for minutes at a time.</li>
-                <li>Walking into a room and having zero idea why.</li>
-                <li>Pulling doors that clearly say "PUSH".</li>
-                <li>Forgetting your own phone number mid-conversation.</li>
-                <li>Making bizarre noises with no logical explanation.</li>
-                <li>Laughing hysterically at the exact wrong moment.</li>
-            </ul>
-        </div>
-
-        <!-- Treatment Card -->
-        <div class="card">
-            <div class="card-header">
-                <span class="icon">💊</span>
-                <h2>Recommended "Treatment"</h2>
-            </div>
-            <ul>
-                <li>Daily doses of controlled, harmless chaos.</li>
-                <li>Hanging out with equally dense and erratic friends.</li>
-                <li>Building pillow forts instead of doing responsibilities.</li>
-                <li>Watching nonsensical video loops for hours.</li>
-                <li>Strict policy: <b>Zero logical thoughts allowed.</b></li>
-            </ul>
-        </div>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Larsonism.net <span>Official Portal</span></a>
+      <nav>
+        <a href="index.html" class="active">Overview</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="certificate.html">Get Certified</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Banner linked to second and third pages -->
-    <div class="banner">
-        <h3>Does This Sound Like You?</h3>
-        <p>Read real stories from fellow Larsonists or claim your official diagnosis today.</p>
-        <div class="btn-group">
-            <a href="certificate.html" class="cta-btn">Claim Your Diagnosis</a>
-            <a href="testimonials.html" class="cta-btn secondary">Read Testimonials</a>
-        </div>
-    </div>
+  <main>
+    <section class="hero">
+      <span class="badge">Public Health Advisory • Code LRS-404</span>
+      <h1>Understanding Larsonism</h1>
+      <p>
+        <strong>Larsonism</strong> (<em>Acute Goofiness &amp; Situational Bewilderment Syndrome</em>) is a widespread, non-contagious neurological quirk characterized by sudden lapses in common sense, inexplicable physical comedy, and confident execution of terrible ideas.
+      </p>
+      <br>
+      <a href="certificate.html" class="btn btn-accent">Generate Official Diagnosis</a>
+      <a href="testimonials.html" class="btn" style="margin-left: 0.5rem;">Read Patient Stories</a>
+    </section>
 
-    <div class="disclaimer">
-        <p>⚠️ <i>This page is for entertainment and joke purposes only. It is not a real medical diagnosis. Embrace your chaos!</i></p>
+    <div class="grid">
+      <div class="card">
+        <h3>Common Symptoms</h3>
+        <ul class="symptoms">
+          <li>Aggressively pulling on doors clearly labeled <strong>"PUSH"</strong>.</li>
+          <li>Staring blankly into the refrigerator for 4+ minutes without taking anything.</li>
+          <li>Saying <em>"You too"</em> when a waiter tells you to enjoy your meal.</li>
+          <li>Walking into a room and immediately forgetting why you entered.</li>
+          <li>Laughing at your own joke before finishing the punchline.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Stages of Progression</h3>
+        <p style="margin-bottom: 0.75rem;"><strong>Stage 1 (Mild):</strong> Occasional mispronunciation of simple words and losing sunglasses while wearing them on your head.</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Stage 2 (Moderate):</strong> Attempting to unlock your front door using your car key fob.</p>
+        <p><strong>Stage 3 (Peak Larsonism):</strong> Full commitment to goofy behavior in public with zero situational awareness.</p>
+      </div>
+
+      <div class="card">
+        <h3>Treatment &amp; Management</h3>
+        <p style="margin-bottom: 1rem;">
+          There is currently no known cure for Larsonism. Doctors recommend hydration, double-checking door signs, and accepting your fate.
+        </p>
+        <p>
+          If you or a loved one exhibit two or more symptoms daily, please obtain an official certificate for workplace or school accommodations.
+        </p>
+      </div>
     </div>
+  </main>
+
+  <footer>
+    &copy; 2026 National Institute of Larsonism Studies. For satirical and entertainment purposes only.
+  </footer>
 
 </body>
 </html>
